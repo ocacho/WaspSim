@@ -9,5 +9,4 @@ To use the model download all the files and subfolders from the Matlab folder. T
 
 To get started, open Sim_cluster_script.m in the Matlab environment. This script allows you to generate the results reported in Cacho and Hester (2022). Before running the code, consider that it may take several days to complete the simulations, depending on the computer used. You may wish to change the experimental design and simulate only a few cases for a single spatial cluster to get a feel for the model.
 
-The Data folder contains four results files  nsw_20_10_1.mat, vic_20_10_1.mat, nsw_50_01_1.mat and vic_50_01_1.mat which are used by Plot_figs.m to produce phase diagrams and other useful plots without having to first run Sim_cluster_script.m. 
-
+The Data folder contains four small results files (nsw_2010.mat, vic_2010.mat, nsw_0150.mat and vic_0150.mat) with only 10 experimental treatments per file. Use Plot_figs.m to produce phase diagrams and other useful plots based on these files without having to first run Sim_cluster_script.m. 
