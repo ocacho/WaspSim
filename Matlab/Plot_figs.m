@@ -4,7 +4,7 @@
 %% =================================== Plot phase diagram in Figure 6  
 clear;
 path(path, '.\Data\');
-load('vic_20_10.mat'); % load file to plot
+load('vic_2010.mat'); % load file to plot
 Wmean = permute(sum(ev.W .* garea)./sum(garea),[3,2,1]);
 Bmean = permute(sum(ev.B .* garea)./sum(garea),[3,2,1]);
 figure(1);
@@ -17,7 +17,7 @@ grid
 %% ================================== Plot wasp density maps in Figure 7
 clear;
 path(path, '.\Data\');
-load('vic_20_10.mat'); % load file to plot
+load('vic_2010.mat'); % load file to plot
 load('W0_prm_vic.mat', 'gpoly'); % load map polyshape
 Wmap = permute(mean(ev.W,2), [1,3,2]);
 wmax = 1; % max value for mapping to colormap 
@@ -29,8 +29,8 @@ subplot(1,2,1);
   ylabel('Latitude');
   grid;
 subplot(1,2,2);
-  Plot_map(gpoly,Wmap(:,81),wmax);
-  title('VIC treatment 81');
+  Plot_map(gpoly,Wmap(:,9),wmax);
+  title('VIC treatment 9');
   xlabel('Longitude');
   ylabel('Latitude');
   grid;
@@ -82,7 +82,21 @@ subplot(2,2,4);
     title('D (\delta_W)')
     hold off
 %
-%
+%% =================== Plot wasp density vs household density
+clear;
+path(path, '.\Data\');
+load('vic_2010.mat'); % load file to plot
+Wmap = permute(mean(ev.W,2), [1,3,2]);
+figure(4)
+  plot(log(hh_dens),(Wmap(:,1)), '.');
+  hold on;
+  plot(log(hh_dens),(Wmap(:,9)), '.');
+  title('VIC');
+  xlabel('Household density per km^2 (log_e)');
+  ylabel('Mean wasp density (nests/km^2');
+  legend('trt 1', 'trt 9');
+  grid;
+  hold off
 %% =================================================== embedded functions
 % --------------------------------------------------- Plot_map funtion
 function [pg] = Plot_map(m, x, x_max)
