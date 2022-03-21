@@ -41,9 +41,9 @@ for t = 1 : nt
     % adjust parameters for wasp-biocontrol interaction
     bet_b = log(bp.alp)./(bp.kap .* wt); % biocontrol beta depends on wasp nests
     bet_b(bet_b==inf) = 1000; % if no wasp nests biocontrol can't establish
-    alp_bw = min((bp.kw .* bt),1); % effect of biocontrol on alpha
+    alp_bw = min((bp.rho .* bt),1); % effect of biocontrol on alpha
     alp_w = wp.alp .* (1 - alp_bw); % wasp alpha depends on biocontrol density
-    mu_w = min((bp.kmu .* bt), 1); % effect of biocontrol on wasp winter mortality
+    mu_w = min((bp.phi .* bt), 1); % effect of biocontrol on wasp winter mortality
     %
     wt = Rand_Spread(wt,Kw); % wasp spread occurs first
     bt = Rand_Spread(bt,Kb); % biocontrol spread

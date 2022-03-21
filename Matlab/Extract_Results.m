@@ -51,7 +51,7 @@ function [b_p, w_p, dec_var, prob, ev, sd] = Extract_Results(prm, br_rule, WM, B
     b_p(1) = prm.b.alp;
     b_p(2) = prm.b.mu ;
     b_p(3) = prm.b.gam;
-    b_p(4) = prm.b.kw; % effectiveness (rho_b = phi_b)
+    b_p(4) = prm.b.rho; % effectiveness (rho_b = phi_b)
     %
     % wasp parameters
     w_p(1) = prm.w.alp;

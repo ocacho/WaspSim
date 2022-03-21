@@ -64,8 +64,8 @@ for j = 1 : nbp % biocontrol parameters
     prm.b.alp = bp_exp(j,1);
     prm.b.mu = bp_exp(j,2);
     prm.b.gam = bp_exp(j,3);
-    prm.b.kw = bp_exp(j,4); % rho_b
-    prm.b.kmu = bp_exp(j,4); % phi_b
+    prm.b.rho = bp_exp(j,4); % rho_b
+    prm.b.phi = bp_exp(j,4); % phi_b
     %
     tic
     [WM KM, BM CM] = Sim_Biocontrol(W0, bioc_rule, prm, D, nt, hh_dens, wp_samp);
